@@ -5,26 +5,11 @@
 // 11 16 15 06
 // 10 09 08 07
 
-void PrintArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + "\t");
-        }
-        Console.WriteLine();
-    }
-}
-Console.WriteLine("Введите размер массива");
-int size = Convert.ToInt32(Console.ReadLine());
-
-int[,] array = new int[size, size];
-int number = 1;
-int i = 0;
-int j = 0;
 void FillArray(int[,] array, int size)
 {
+    int number = 1;
+    int i = 0;
+    int j = 0;
     while (number <= size * size)
     {
         array[i, j] = number;
@@ -39,5 +24,20 @@ void FillArray(int[,] array, int size)
         number++;
     }
 }
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+int[,] array = new int[size, size];
 FillArray(array, size);
 PrintArray(array);
