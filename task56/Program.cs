@@ -42,14 +42,14 @@ for (int i = 0; i < m; i++)
     }
     Console.WriteLine($"Сумма в строке {i} = {sum[i]}");
 }
-int maxSum = sum[0];
-int maxIndex = 0;
+int minSum = sum[0];
+int minIndex = 0;
 for (int i = 1; i < m; i++)
 {
-    if (sum[i] > maxSum)
+    if (sum[i] < minSum)
     {
-        maxSum = sum[i];
-        maxIndex = i;
+        minSum = sum[i];
+        minIndex = i;
     }
 }
-Console.WriteLine($"Максимальная сумма в строке {maxIndex}");
+Console.WriteLine($"Наименьшая сумма элементов в строке {minIndex}");
